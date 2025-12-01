@@ -10,7 +10,6 @@ const HeroProject = ({ project, index }) => {
   const router = useRouter();
   const { handleMouseEnter, handleMouseLeave, handleClick } = useCursorStore();
   const [onClicked, setOnClicked] = useState(false);
-  const [imgLoaded, setImgLoaded] = useState(false);
   const isTablet = useMedia("(max-width: 992px)");
 
   const calcTop = 16 + index * 16;
@@ -108,12 +107,15 @@ const HeroProject = ({ project, index }) => {
         </div>
       </header>
 
-      <section
+      <motion.section
         className="h-fit px-4 flex items-center justify-center max-lg:!py-4 max-lg:!mb-35"
         style={{
           padding: `${customPadding}`,
           marginBottom: `${customMargin}`,
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         <motion.figure
           ref={imageRef}
@@ -129,22 +131,13 @@ const HeroProject = ({ project, index }) => {
             clickedInProject();
           }}
         >
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: imgLoaded ? 1 : 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="h-full"
-          >
-            <Image
-              src={project.img}
-              width={1200}
-              height={1200}
-              alt=""
-              className="max-h-[650px] h-full object-cover"
-              onLoad={() => setImgLoaded(true)}
-              priority={index < 2}
-            />
-          </motion.div>
+          <Image
+            src={project.img}
+            width={1200}
+            height={1200}
+            alt=""
+            className="max-h-[650px] h-full object-cover"
+          />
         </motion.figure>
 
         <motion.div
@@ -155,7 +148,7 @@ const HeroProject = ({ project, index }) => {
         >
           <h2 className="normal-txt">LOADING</h2>
         </motion.div>
-      </section>
+      </motion.section>
     </>
   );
 };

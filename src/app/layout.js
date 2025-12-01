@@ -5,6 +5,9 @@ import { Cursor } from "@/utils/cursor";
 export const metadata = {
   title: "giovanni sotomayor",
   description: "photography and works by giovanni sotomayor.",
+  icons: {
+    icon: "/favicon.png",
+  },
   openGraph: {
     title: "giovanni sotomayor",
     description: "photography and works by giovanni sotomayor.",
