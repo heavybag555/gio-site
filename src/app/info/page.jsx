@@ -55,7 +55,7 @@ const Info = () => {
             <h2 className="normal-txt">Studio</h2>
 
             <p className="normal-txt cursor-pointer transition-all hover:opacity-50">
-              studio@ericyue.com
+              studio@giovannisotomayor.com
             </p>
           </div>
 

@@ -9,12 +9,10 @@ const HeroProject = ({ project, index }) => {
   const imageRef = useRef(null);
   const router = useRouter();
   const { handleMouseEnter, handleMouseLeave, handleClick } = useCursorStore();
-  const [hoverVideo, setHoverVideo] = useState(null);
   const [onClicked, setOnClicked] = useState(false);
   const isTablet = useMedia("(max-width: 992px)");
 
   const calcTop = 16 + index * 16;
-  const calcTop2 = 32 + index * 16;
   const customPadding = index === 0 ? "150px 0 250px  0" : "5px";
   const customMargin = index === 0 ? 0 : "250px";
 
@@ -68,8 +66,6 @@ const HeroProject = ({ project, index }) => {
       <header
         className="sticky w-full px-4 mix-blend-exclusion"
         style={{ top: calcTop }}
-        onMouseEnter={() => setHoverVideo(true)}
-        onMouseLeave={() => setHoverVideo(false)}
       >
         <ul
           className="relative grid grid-cols-5 group max-lg:grid-cols-2"
@@ -110,22 +106,6 @@ const HeroProject = ({ project, index }) => {
           </a>
         </div>
       </header>
-
-      <motion.div
-        className="sticky w-full px-16 mix-blend-unset pointer-events-none max-lg:hidden"
-        style={{ top: calcTop2 }}
-        variants={opacityAnimation}
-        initial="initial"
-        animate={hoverVideo ? "animate" : "initial"}
-      >
-        <video
-          src={project.video}
-          className="absolute -top-7 w-[300px] h-[200px]"
-          autoPlay
-          loop
-          muted
-        />
-      </motion.div>
 
       <section
         className="h-fit px-4 flex items-center justify-center max-lg:!py-4 max-lg:!mb-35"

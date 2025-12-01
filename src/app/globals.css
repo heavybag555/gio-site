@@ -17,7 +17,7 @@
 
 @layer utilities {
   .normal-txt {
-    @apply text-[11px] text-white font-bold cursor-pointer select-none;
+    @apply text-[11px] leading-[16.5px] tracking-wide text-white font-normal antialiased cursor-pointer select-none;
   }
 }
 
@@ -37,8 +37,10 @@ body {
   vertical-align: baseline;
 
   width: 100%;
-  font-family: Helvetica, sans-serif;
+  font-family: "Helvetica Mono", Helvetica, ui-sans-serif, sans-serif;
   background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::-webkit-scrollbar {

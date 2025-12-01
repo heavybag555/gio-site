@@ -17,7 +17,7 @@ const Footer = () => {
               router.push("/");
             }}
           >
-            ERIC K. YUE
+            GIOVANNI SOTOMAYOR
           </a>
           <a
             className="normal-txt uppercase cursor-pointer select-none"
