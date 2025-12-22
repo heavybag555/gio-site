@@ -38,7 +38,8 @@ body {
 
   width: 100%;
   font-family: "Helvetica Mono", Helvetica, ui-sans-serif, sans-serif;
-  background-color: var(--color-white);
+  background-color: var(--color-black);
+  color: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const ArchiveBackground = ({ hoveredImage }) => {
   return (
-    <div className="fixed inset-0 z-[-1] bg-white pointer-events-none">
+    <div className="fixed inset-0 z-[-1] bg-black pointer-events-none">
       <AnimatePresence>
         {hoveredImage && (
           <motion.div

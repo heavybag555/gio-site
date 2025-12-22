@@ -47,8 +47,8 @@ const ProjectsDetail = () => {
 
   useEffect(() => {
     if (!project?.video) {
-        setIsPlaying(false);
-        return;
+      setIsPlaying(false);
+      return;
     }
 
     const video = videoRef.current;
@@ -121,7 +121,9 @@ const ProjectsDetail = () => {
         >
           <ul className="relative grid grid-cols-5 max-lg:grid-cols-2 ">
             <div className="flex items-center max-lg:gap-4">
-              {hasVideo && <a className="relative normal-txt max-lg:hidden">{videoTime}</a>}
+              {hasVideo && (
+                <a className="relative normal-txt max-lg:hidden">{videoTime}</a>
+              )}
               <a className="normal-txt hidden max-lg:block">{project.index}</a>
               <a className="normal-txt hidden max-lg:block">{project.title}</a>
             </div>
@@ -145,17 +147,23 @@ const ProjectsDetail = () => {
         </header>
 
         {hasVideo && (
-          <div className="fixed top-[35px] left-0 w-full h-[1px] bg-white-20 z-10 max-lg:bg-[#00000031]">
+          <div className="fixed top-[35px] left-0 w-full h-[1px] bg-white-20 z-10">
             <div
-              className="h-full bg-white transition-all duration-200 ease-linear max-lg:bg-black"
+              className="h-full bg-white transition-all duration-200 ease-linear"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
         )}
 
         <section
-          className={`w-full h-full ${hasVideo ? "fixed top-0 flex justify-center items-center cursor-none" : "pt-[60px] pb-[60px] overflow-y-auto min-h-screen flex flex-col items-center gap-4"}`}
-          onMouseEnter={() => handleMouseEnter(hasVideo ? "playVideo" : "default")}
+          className={`w-full h-full ${
+            hasVideo
+              ? "fixed top-0 flex justify-center items-center cursor-none"
+              : "pt-[60px] pb-[60px] overflow-y-auto min-h-screen flex flex-col items-center gap-4"
+          }`}
+          onMouseEnter={() =>
+            handleMouseEnter(hasVideo ? "playVideo" : "default")
+          }
           onMouseLeave={() => handleMouseLeave()}
         >
           {hasVideo ? (
@@ -170,33 +178,31 @@ const ProjectsDetail = () => {
             />
           ) : (
             <div className="w-full flex flex-col items-center gap-10 px-4">
-              {project.images && project.images.length > 0 ? (
-                project.images.map((imgSrc, idx) => (
-                  <div key={idx} className="relative w-full max-w-[1200px]">
-                    <Image
+              {project.images && project.images.length > 0
+                ? project.images.map((imgSrc, idx) => (
+                    <div key={idx} className="relative w-full max-w-[1200px]">
+                      <Image
                         src={imgSrc}
                         alt={`${project.title} - ${idx + 1}`}
                         width={1200}
                         height={800}
                         className="w-full h-auto object-contain"
                         priority={idx === 0}
-                    />
-                  </div>
-                ))
-              ) : (
-                 project.img && (
+                      />
+                    </div>
+                  ))
+                : project.img && (
                     <div className="relative w-full max-w-[1200px]">
-                    <Image
+                      <Image
                         src={project.img}
                         alt={project.title}
                         width={1200}
                         height={800}
                         className="w-full h-auto object-contain"
                         priority
-                    />
-                  </div>
-                 )
-              )}
+                      />
+                    </div>
+                  )}
             </div>
           )}
         </section>

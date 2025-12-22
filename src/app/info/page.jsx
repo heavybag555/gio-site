@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Info = () => {
   const router = useRouter();
@@ -32,6 +33,16 @@ const Info = () => {
       </section>
 
       <section className="col-start-2 col-span-2 row-start-2 self-end max-lg:row-start-1 max-lg:col-start-1 max-lg:px-4 max-lg:py-3 max-lg:pr-16">
+        <div className="mb-4">
+          <Image
+            src="/gio-headshot.jpg"
+            alt="Giovanni Sotomayor"
+            width={400}
+            height={500}
+            className="w-1/2 h-auto"
+            priority
+          />
+        </div>
         <p className="normal-txt cursor-pointer select-none">
           (b. New York, NY) Giovanni Sotomayor is a New Jersey–born
           photographer, cinematographer, and multimedia storyteller whose work

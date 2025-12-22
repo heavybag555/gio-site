@@ -13,7 +13,7 @@ export const metadata = {
     description: "photography and works by giovanni sotomayor.",
     images: [
       {
-        url: "/photos/My Selects/000004860001.jpg",
+        url: "/update-photos/001- 35mm - 400 Portra Pyrenees /Select for connor.jpg",
         width: 1200,
         height: 630,
         alt: "giovanni sotomayor portfolio",
