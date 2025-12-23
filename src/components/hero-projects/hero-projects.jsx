@@ -126,7 +126,7 @@ const HeroProject = ({
       </header>
 
       <motion.section
-        className="h-fit px-4 flex items-center justify-center max-lg:!py-4 max-lg:!mb-35"
+        className="h-fit px-4 flex items-center justify-center max-lg:!py-4 max-lg:!px-[5px] max-lg:!mb-35"
         style={{
           padding: `${customPadding}`,
           marginBottom: `${customMargin}`,
