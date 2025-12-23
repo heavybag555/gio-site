@@ -4,15 +4,27 @@ import { useMedia } from "react-use";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const HeroProject = ({ project, index }) => {
+const HeroProject = ({
+  project,
+  index,
+  topRightLabel = "Archive",
+  onTopRightClick,
+  showTopRightOnFirstOnly = true,
+}) => {
   const imageRef = useRef(null);
   const router = useRouter();
   const { handleMouseEnter, handleMouseLeave, handleClick } = useCursorStore();
   const [onClicked, setOnClicked] = useState(false);
   const isTablet = useMedia("(max-width: 992px)");
 
-  const calcTop = 16 + index * 16;
-  const customPadding = index === 0 ? "108px 0 250px 0" : "5px";
+  // Default top-right action: navigate to /archive
+  const handleTopRightClick = onTopRightClick || (() => router.push("/archive"));
+
+  // Use CSS variable for base + offset per subsequent item for stacking
+  const calcTop = index === 0 
+    ? 'var(--pageInsetTop)' 
+    : `calc(var(--pageInsetTop) + ${index * 16}px)`;
+  const customPadding = index === 0 ? "108px 1rem 250px 1rem" : "5px";
   const customMargin = index === 0 ? 0 : "250px";
 
   const zoomAnimation = {
@@ -94,16 +106,23 @@ const HeroProject = ({ project, index }) => {
           </a>
         </ul>
 
-        <div className="fixed top-3 right-0 px-4">
+        {showTopRightOnFirstOnly ? (
+          index === 0 && (
+            <a
+              className="absolute top-0 right-4 normal-txt hover:text-gray-400 transition-colors"
+              onClick={handleTopRightClick}
+            >
+              {topRightLabel}
+            </a>
+          )
+        ) : (
           <a
-            className="normal-txt hover:text-gray-400 transition-colors"
-            onClick={() => {
-              router.push("/archive");
-            }}
+            className="absolute top-0 right-4 normal-txt hover:text-gray-400 transition-colors"
+            onClick={handleTopRightClick}
           >
-            {index === 0 && "Archive"}
+            {topRightLabel}
           </a>
-        </div>
+        )}
       </header>
 
       <motion.section

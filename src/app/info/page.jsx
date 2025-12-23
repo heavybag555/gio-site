@@ -6,9 +6,9 @@ import Image from "next/image";
 const Info = () => {
   const router = useRouter();
   return (
-    <main className="h-screen grid grid-cols-5 grid-rows-2 py-3 max-lg:h-fit max-lg:grid-cols-2 max-lg:grid-rows-1 mix-blend-exclusion">
+    <main className="h-screen grid grid-cols-5 grid-rows-2 px-4 pt-[var(--pageInsetTop)] pb-[var(--footerReserve)] max-lg:h-fit max-lg:grid-cols-2 max-lg:grid-rows-1 max-lg:pt-[var(--pageInsetTop)] max-lg:pb-[var(--footerReserve)] mix-blend-exclusion">
       <section className="col-start-5 col-span-1 max-lg:col-start-2">
-        <div className="fixed top-0 right-0 px-5 py-2 flex justify-end max-lg:py-6">
+        <div className="fixed top-[var(--pageInsetTop)] right-0 px-4 flex justify-end">
           <button
             className="normal-txt cursor-pointer select-none hover:text-gray-400 transition-colors"
             onClick={() => {
@@ -32,7 +32,7 @@ const Info = () => {
         </ul>
       </section>
 
-      <section className="col-start-2 col-span-2 row-start-2 self-end max-lg:row-start-1 max-lg:col-start-1 max-lg:px-4 max-lg:py-3 max-lg:pr-16">
+      <section className="col-start-2 col-span-2 row-start-2 self-end max-lg:row-start-1 max-lg:col-start-1 max-lg:pt-3 max-lg:pb-2">
         <div className="mb-4">
           <Image
             src="/gio-headshot.jpg"

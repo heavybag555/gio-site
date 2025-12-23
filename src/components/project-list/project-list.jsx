@@ -3,7 +3,7 @@
 const ProjectList = ({ project, router, setHoveredImage }) => {
   return (
     <div
-      className="relative w-full px-4"
+      className="relative w-full"
       onClick={() => {
         router.push("/projects/" + project.id);
       }}

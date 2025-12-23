@@ -4,12 +4,12 @@ import Filters from "@/components/filters/filters";
 import ProjectGrid from "@/components/project-grid/project-grid";
 import ProjectList from "@/components/project-list/project-list";
 import ArchiveBackground from "@/components/archive-background/archive-background";
+import HeroProject from "@/components/hero-projects/hero-projects";
 import projectsData from "@/data/projectsData";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useMedia } from "react-use";
-import ProjectMobile from "@/components/project-mobile/project-mobile";
 
 const opacityAnimation = {
   initial: { opacity: 0 },
@@ -42,7 +42,7 @@ const Nav = ({
   return (
     <>
       {!isTablet ? (
-        <nav className="fixed top-0 right-0 py-3 px-4 mix-blend-exclusion">
+        <nav className="fixed top-[var(--pageInsetTop)] right-0 px-4 mix-blend-exclusion flex flex-col items-end">
           <button
             className="mb-4 normal-txt text-end hover:text-gray-400 transition-colors"
             onClick={() => {
@@ -92,7 +92,7 @@ const Nav = ({
           </ul>
         </nav>
       ) : (
-        <nav className="fixed bottom-8 right-0 py-3 px-4 mix-blend-exclusion">
+        <nav className="fixed bottom-[var(--pageInsetBottom)] right-0 px-4 mix-blend-exclusion">
           <ul>
             <li className="flex flex-col items-end">
               <button
@@ -136,11 +136,11 @@ const Archive = () => {
     <>
       <ArchiveBackground hoveredImage={hoveredImage} />
       {!isTablet ? (
-        <main className={` ${layout === "grid" ? "px-5 py-6" : "px-2 py-6"}`}>
+        <main className={` ${layout === "grid" ? "px-4 pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]" : "px-4 pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]"}`}>
           <section
             className={`w-full ${
               layout === "grid"
-                ? "grid grid-cols-5 gap-20"
+                ? "grid grid-cols-5 gap-x-0 gap-y-20"
                 : "flex flex-col gap-0"
             } justify-between`}
           >
@@ -173,10 +173,20 @@ const Archive = () => {
           </section>
         </main>
       ) : (
-        <>
-          {filteredProjects.map((project, i) => (
-            <ProjectMobile key={i} project={project} index={i} />
-          ))}
+        <main className="pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]">
+          <div className="flex flex-col">
+            {filteredProjects.map((project, i) => (
+              <HeroProject
+                key={i}
+                project={project}
+                index={i}
+                topRightLabel="Close"
+                onTopRightClick={() => router.push("/")}
+                showTopRightOnFirstOnly={true}
+              />
+            ))}
+            <div className="h-screen" />
+          </div>
           <Nav
             activeFilter={activeFilter}
             setActiveFilter={setActiveFilter}
@@ -185,7 +195,7 @@ const Archive = () => {
             router={router}
             isTablet={isTablet}
           />
-        </>
+        </main>
       )}
     </>
   );

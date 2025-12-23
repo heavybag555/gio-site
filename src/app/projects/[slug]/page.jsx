@@ -17,7 +17,7 @@ const formatTime = (seconds) => {
 const Details = ({ setDetailsVisible, project }) => {
   return (
     <>
-      <div className="fixed bottom-0 left-0 px-5 pb-12 z-[100]">
+      <div className="fixed bottom-[var(--footerReserve)] left-0 px-4 z-[100]">
         <ul>
           <li className="normal-txt">{project.index}</li>
           <li className="normal-txt">{project.title}</li>
@@ -118,7 +118,7 @@ const ProjectsDetail = () => {
     <>
       <div className="">
         <header
-          className="fixed top-0 right-0 w-full px-5 py-2 mix-blend-exclusion z-10 "
+          className="fixed top-[var(--pageInsetTop)] right-0 w-full px-4 mix-blend-exclusion z-10"
           onMouseEnter={() => handleMouseEnter("default")}
         >
           <ul className="relative grid grid-cols-5 max-lg:grid-cols-2 ">
@@ -135,7 +135,7 @@ const ProjectsDetail = () => {
             <a className="normal-txt max-lg:hidden">{project.camera}</a>
           </ul>
 
-          <div className="fixed top-0 right-0 px-5 py-2 flex justify-end cursor-default">
+          <div className="fixed top-[var(--pageInsetTop)] right-0 px-4 flex justify-end cursor-default">
             <button
               className="normal-txt cursor-pointer select-none hover:text-gray-400 transition-colors"
               onClick={() => {
@@ -149,7 +149,7 @@ const ProjectsDetail = () => {
         </header>
 
         {hasVideo && (
-          <div className="fixed top-[35px] left-0 w-full h-[1px] bg-white-20 z-10">
+          <div className="fixed top-[calc(var(--pageInsetTop)+20px)] left-0 w-full h-[1px] bg-white-20 z-10">
             <div
               className="h-full bg-white transition-all duration-200 ease-linear"
               style={{ width: `${progressPercent}%` }}
@@ -161,7 +161,7 @@ const ProjectsDetail = () => {
           className={`w-full h-full ${
             hasVideo
               ? "fixed top-0 flex justify-center items-center cursor-none"
-              : "pt-[60px] pb-[60px] overflow-y-auto min-h-screen flex flex-col items-center gap-4"
+              : "pt-[calc(var(--pageInsetTop)+24px)] pb-[var(--footerReserve)] overflow-y-auto min-h-screen flex flex-col items-center gap-4"
           }`}
           onMouseEnter={() =>
             handleMouseEnter(hasVideo ? "playVideo" : "default")
@@ -210,7 +210,7 @@ const ProjectsDetail = () => {
         </section>
 
         <footer
-          className="fixed bottom-0 right-0 w-full px-5 py-3 mix-blend-exclusion z-50"
+          className="fixed bottom-[var(--pageInsetBottom)] right-0 w-full px-4 mix-blend-exclusion z-50"
           onMouseEnter={() => handleMouseLeave()}
         >
           <ul className="relative flex justify-between">

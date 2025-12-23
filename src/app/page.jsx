@@ -4,7 +4,7 @@ import { heroData } from "@/data/projectsData";
 
 const Home = () => {
   return (
-    <main className="py-4">
+    <main className="pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]">
       <div className="flex flex-col">
         {heroData.map((project, i) => (
           <HeroProject key={i} project={project} index={i} />

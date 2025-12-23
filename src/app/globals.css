@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+:root {
+  --pageInset: 12px; /* Matches header's original top-3 (12px) */
+  --pageInsetTop: calc(var(--pageInset) + env(safe-area-inset-top, 0px));
+  --pageInsetBottom: calc(var(--pageInset) + env(safe-area-inset-bottom, 0px));
+  --footerReserve: calc(var(--pageInsetBottom) + 20px); /* Reserve for content above footer */
+}
+
 @theme {
   --color-black: #000;
   --color-white: #fff;
