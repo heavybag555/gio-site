@@ -12,7 +12,7 @@ const Footer = () => {
       {!isProjectPage && (
         <nav className="fixed bottom-0 w-full py-3 px-5 flex items-center justify-between mix-blend-exclusion z-50">
           <a
-            className="normal-txt cursor-pointer select-none"
+            className="normal-txt cursor-pointer select-none hover:text-gray-400 transition-colors"
             onClick={() => {
               router.push("/");
             }}
@@ -20,7 +20,7 @@ const Footer = () => {
             Giovanni Sotomayor
           </a>
           <a
-            className="normal-txt cursor-pointer select-none"
+            className="normal-txt cursor-pointer select-none hover:text-gray-400 transition-colors"
             onClick={() => {
               router.push("/info");
             }}

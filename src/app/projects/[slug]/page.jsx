@@ -137,7 +137,7 @@ const ProjectsDetail = () => {
 
           <div className="fixed top-0 right-0 px-5 py-2 flex justify-end cursor-default">
             <button
-              className="normal-txt cursor-pointer select-none"
+              className="normal-txt cursor-pointer select-none hover:text-gray-400 transition-colors"
               onClick={() => {
                 router.back();
                 handleClick();
@@ -216,7 +216,7 @@ const ProjectsDetail = () => {
           <ul className="relative flex justify-between">
             <div className="flex items-center max-lg:gap-4">
               <button
-                className="normal-txt"
+                className="normal-txt hover:text-gray-400 transition-colors"
                 onClick={() => setDetailsVisible(true)}
               >
                 Details
@@ -224,10 +224,10 @@ const ProjectsDetail = () => {
             </div>
             {hasVideo && (
               <div className="flex items-center gap-4">
-                <button className="normal-txt" onClick={toggleFullscreen}>
+                <button className="normal-txt hover:text-gray-400 transition-colors" onClick={toggleFullscreen}>
                   Fullscreen
                 </button>
-                <button className="normal-txt" onClick={toggleMute}>
+                <button className="normal-txt hover:text-gray-400 transition-colors" onClick={toggleMute}>
                   {isMuted ? "Unmute" : "Mute"}
                 </button>
               </div>

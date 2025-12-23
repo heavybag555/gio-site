@@ -44,7 +44,7 @@ const Nav = ({
       {!isTablet ? (
         <nav className="fixed top-0 right-0 py-3 px-4 mix-blend-exclusion">
           <button
-            className="mb-4 normal-txt text-end"
+            className="mb-4 normal-txt text-end hover:text-gray-400 transition-colors"
             onClick={() => {
               router.push("/");
             }}

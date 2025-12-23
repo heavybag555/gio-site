@@ -1,5 +1,4 @@
 import { useCursorStore } from "@/store/zustand";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useMedia } from "react-use";
 import { useRef, useState } from "react";
@@ -13,7 +12,7 @@ const HeroProject = ({ project, index }) => {
   const isTablet = useMedia("(max-width: 992px)");
 
   const calcTop = 16 + index * 16;
-  const customPadding = index === 0 ? "150px 0 250px  0" : "5px";
+  const customPadding = index === 0 ? "108px 0 250px 0" : "5px";
   const customMargin = index === 0 ? 0 : "250px";
 
   const zoomAnimation = {
@@ -97,7 +96,7 @@ const HeroProject = ({ project, index }) => {
 
         <div className="fixed top-3 right-0 px-4">
           <a
-            className="normal-txt"
+            className="normal-txt hover:text-gray-400 transition-colors"
             onClick={() => {
               router.push("/archive");
             }}
@@ -131,12 +130,10 @@ const HeroProject = ({ project, index }) => {
             clickedInProject();
           }}
         >
-          <Image
+          <img
             src={project.img}
-            width={1200}
-            height={1200}
             alt=""
-            className="max-h-[650px] h-full object-cover"
+            className="w-[1200px] max-w-full h-auto"
           />
         </motion.figure>
 
