@@ -189,7 +189,7 @@ const projectsData = [
   {
     id: "011-35mm-tri-x-400-wnyu-75th-anniversary-concert",
     index: "011",
-    title: "WNYU 75th Anniversary Concert",
+    title: "WNYU 75th Anniversary",
     author: "WNYU",
     category: "Music",
     camera: "35mm",

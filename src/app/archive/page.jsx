@@ -92,7 +92,7 @@ const Nav = ({
           </ul>
         </nav>
       ) : (
-        <nav className="fixed bottom-[var(--pageInsetBottom)] right-0 px-4 mix-blend-exclusion">
+        <nav className="fixed bottom-[calc(var(--pageInsetBottom)+20px)] right-0 px-4 mix-blend-exclusion">
           <ul>
             <li className="flex flex-col items-end">
               <button
