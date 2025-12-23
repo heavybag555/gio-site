@@ -10,12 +10,12 @@ const Info = () => {
       <section className="col-start-5 col-span-1 max-lg:col-start-2">
         <div className="fixed top-0 right-0 px-5 py-2 flex justify-end max-lg:py-6">
           <button
-            className="normal-txt uppercase cursor-pointer select-none"
+            className="normal-txt cursor-pointer select-none"
             onClick={() => {
               router.push("/");
             }}
           >
-            CLOSE
+            Close
           </button>
         </div>
 

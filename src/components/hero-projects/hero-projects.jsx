@@ -97,12 +97,12 @@ const HeroProject = ({ project, index }) => {
 
         <div className="fixed top-3 right-0 px-4">
           <a
-            className="normal-txt uppercase"
+            className="normal-txt"
             onClick={() => {
               router.push("/archive");
             }}
           >
-            {index === 0 && "ARCHIVE"}
+            {index === 0 && "Archive"}
           </a>
         </div>
       </header>
@@ -146,7 +146,7 @@ const HeroProject = ({ project, index }) => {
           initial="initial"
           animate={onClicked ? "animate" : "initial"}
         >
-          <h2 className="normal-txt">LOADING</h2>
+          <h2 className="normal-txt">Loading</h2>
         </motion.div>
       </motion.section>
     </>

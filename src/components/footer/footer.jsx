@@ -12,20 +12,20 @@ const Footer = () => {
       {!isProjectPage && (
         <nav className="fixed bottom-0 w-full py-3 px-5 flex items-center justify-between mix-blend-exclusion z-50">
           <a
-            className="normal-txt uppercase cursor-pointer select-none"
+            className="normal-txt cursor-pointer select-none"
             onClick={() => {
               router.push("/");
             }}
           >
-            GIOVANNI SOTOMAYOR
+            Giovanni Sotomayor
           </a>
           <a
-            className="normal-txt uppercase cursor-pointer select-none"
+            className="normal-txt cursor-pointer select-none"
             onClick={() => {
               router.push("/info");
             }}
           >
-            INFO
+            Info
           </a>
         </nav>
       )}

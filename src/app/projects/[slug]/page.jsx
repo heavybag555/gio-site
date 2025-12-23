@@ -14,14 +14,16 @@ const formatTime = (seconds) => {
   return [h, m, s].map((unit) => String(unit).padStart(2, "0")).join(":");
 };
 
-const Details = ({ setDetailsVisible }) => {
+const Details = ({ setDetailsVisible, project }) => {
   return (
     <>
       <div className="fixed bottom-0 left-0 px-5 pb-12 z-[100]">
         <ul>
-          {/* Placeholder details - in a real app these might come from project data */}
-          <li className="normal-txt">Photography by Giovanni Sotomayor</li>
-          <li className="normal-txt">2024</li>
+          <li className="normal-txt">{project.index}</li>
+          <li className="normal-txt">{project.title}</li>
+          {project.author && <li className="normal-txt">{project.author}</li>}
+          <li className="normal-txt">{project.camera}</li>
+          <li className="normal-txt">{project.filmStock}</li>
         </ul>
       </div>
       <div
@@ -135,13 +137,13 @@ const ProjectsDetail = () => {
 
           <div className="fixed top-0 right-0 px-5 py-2 flex justify-end cursor-default">
             <button
-              className="normal-txt uppercase cursor-pointer select-none"
+              className="normal-txt cursor-pointer select-none"
               onClick={() => {
                 router.back();
                 handleClick();
               }}
             >
-              CLOSE
+              Close
             </button>
           </div>
         </header>
@@ -217,7 +219,7 @@ const ProjectsDetail = () => {
                 className="normal-txt"
                 onClick={() => setDetailsVisible(true)}
               >
-                DETAILS
+                Details
               </button>
             </div>
             {hasVideo && (
@@ -233,7 +235,7 @@ const ProjectsDetail = () => {
           </ul>
         </footer>
       </div>
-      {detailsVisible && <Details setDetailsVisible={setDetailsVisible} />}
+      {detailsVisible && <Details setDetailsVisible={setDetailsVisible} project={project} />}
     </>
   );
 };

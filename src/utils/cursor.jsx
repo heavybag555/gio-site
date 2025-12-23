@@ -31,12 +31,10 @@ export const Cursor = () => {
         <div className="size-full">
           {cursorVariant === "default" && <div className="hidden" />}
           {cursorVariant === "projectHero" && (
-            <div className="normal-txt uppercase">view</div>
+            <div className="normal-txt">View</div>
           )}
           {cursorVariant === "playVideo" && (
-            <div className="normal-txt uppercase">
-              {isPlaying ? "PAUSE" : "PLAY"}
-            </div>
+            <div className="normal-txt">{isPlaying ? "Pause" : "Play"}</div>
           )}
         </div>
       </motion.div>

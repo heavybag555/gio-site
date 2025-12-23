@@ -88,12 +88,12 @@ const ProjectMobile = ({ project, index }) => {
 
         <div className="fixed top-3 right-0 px-4 z-50">
           <a
-            className="normal-txt uppercase"
+            className="normal-txt"
             onClick={() => {
               router.back("/");
             }}
           >
-            {index === 0 && "CLOSE"}
+            {index === 0 && "Close"}
           </a>
         </div>
       </header>
@@ -128,7 +128,7 @@ const ProjectMobile = ({ project, index }) => {
           initial="initial"
           animate={onClicked ? "animate" : "initial"}
         >
-          <h2 className="normal-txt">LOADING</h2>
+          <h2 className="normal-txt">Loading</h2>
         </motion.div>
       </section>
     </>
