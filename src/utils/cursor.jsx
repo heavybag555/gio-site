@@ -2,12 +2,14 @@
 import { motion, useMotionValue } from "framer-motion";
 import { useEffect } from "react";
 import { useCursorStore, usePlayingVideoStore } from "@/store/zustand";
+import { useMedia } from "react-use";
 
 export const Cursor = () => {
   const { cursorVariant } = useCursorStore();
   const { isPlaying } = usePlayingVideoStore();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const isTabletOrMobile = useMedia("(max-width: 992px)", false);
 
   useEffect(() => {
     const manageMouseMove = (e) => {
@@ -20,6 +22,11 @@ export const Cursor = () => {
       window.removeEventListener("mousemove", manageMouseMove);
     };
   }, []);
+
+  // Hide custom cursor on tablet/mobile
+  if (isTabletOrMobile) {
+    return null;
+  }
 
   return (
     <>
