@@ -3,10 +3,16 @@ const projectsData = [
     id: "001-35mm-400-portra-pyrenees",
     index: "001",
     title: "Pyrenees",
+<<<<<<< Updated upstream
     author: "Untitled",
     category: "Photography",
     camera: "35mm",
     filmStock: "400 Portra",
+=======
+    author: "",
+    category: "Photography",
+    camera: "35mm",
+>>>>>>> Stashed changes
     img: "/update-photos/001- 35mm - 400 Portra Pyrenees /Select for connor.jpg",
     images: [
       "/update-photos/001- 35mm - 400 Portra Pyrenees /Select for connor.jpg",
@@ -26,7 +32,10 @@ const projectsData = [
     author: "NAPPYRADIO",
     category: "Music",
     camera: "35mm",
+<<<<<<< Updated upstream
     filmStock: "Cinestill BwXX",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/002- 35mm Cinestill BwXX Supercopa for NAPPYRADIO/Select Supercopa.jpg",
     images: [
       "/update-photos/002- 35mm Cinestill BwXX Supercopa for NAPPYRADIO/Select Supercopa.jpg",
@@ -49,7 +58,10 @@ const projectsData = [
     author: "Document Journal",
     category: "Editorial",
     camera: "35mm",
+<<<<<<< Updated upstream
     filmStock: "Fujifilm 400",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/003- 35mm FUJIFILM 400 - Ariana Reines for Document Journal/SelectAR.jpg",
     images: [
       "/update-photos/003- 35mm FUJIFILM 400 - Ariana Reines for Document Journal/SelectAR.jpg",
@@ -66,7 +78,10 @@ const projectsData = [
     author: "The Bum Diary",
     category: "Editorial",
     camera: "35mm",
+<<<<<<< Updated upstream
     filmStock: "Ilford 400",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/004- 35 mm - Ilford 400 Full Court Bums for The Bum Diary/Select BUM.jpg",
     images: [
       "/update-photos/004- 35 mm - Ilford 400 Full Court Bums for The Bum Diary/Select BUM.jpg",
@@ -84,7 +99,10 @@ const projectsData = [
     author: "Untitled",
     category: "Photography",
     camera: "35mm",
+<<<<<<< Updated upstream
     filmStock: "160 Portra",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/005- 35mm 160 Portra- Twin Peaks/Select Twin Peaks.jpg",
     images: [
       "/update-photos/005- 35mm 160 Portra- Twin Peaks/Select Twin Peaks.jpg",
@@ -102,7 +120,10 @@ const projectsData = [
     author: "STATIC Magazine",
     category: "Music",
     camera: "Polaroid",
+<<<<<<< Updated upstream
     filmStock: "Polaroid",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/006- Young World IV Polaroids for STATIC Magazine/Select YWIV.jpg",
     images: [
       "/update-photos/006- Young World IV Polaroids for STATIC Magazine/Select YWIV.jpg",
@@ -127,7 +148,10 @@ const projectsData = [
     author: "STATIC Magazine",
     category: "Music",
     camera: "35mm",
+<<<<<<< Updated upstream
     filmStock: "Tri-X 400",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/007- 35mm Tri-x 400 GHANDRX for STATIC Magazine/Ghandrx Select.jpg",
     images: [
       "/update-photos/007- 35mm Tri-x 400 GHANDRX for STATIC Magazine/Ghandrx Select.jpg",
@@ -145,7 +169,10 @@ const projectsData = [
     author: "STATIC Magazine",
     category: "Music",
     camera: "35mm",
+<<<<<<< Updated upstream
     filmStock: "Tri-X 400",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/008- 35mm Tri-x 400 Jadasea for STATIC Magazine/SELECT Jadasea.jpg",
     images: [
       "/update-photos/008- 35mm Tri-x 400 Jadasea for STATIC Magazine/SELECT Jadasea.jpg",
@@ -157,10 +184,16 @@ const projectsData = [
     id: "009-35mm-ilford-400-lifeofthom",
     index: "009",
     title: "LIFEOFTHOM",
+<<<<<<< Updated upstream
     author: "Untitled",
     category: "Music",
     camera: "35mm",
     filmStock: "Ilford 400",
+=======
+    author: "Giovanni Sotomayor",
+    category: "Music",
+    camera: "35mm",
+>>>>>>> Stashed changes
     img: "/update-photos/009- 35 mm Ilford 400 - LIFEOFTHOM/Select Lifeofthom.jpg",
     images: [
       "/update-photos/009- 35 mm Ilford 400 - LIFEOFTHOM/Select Lifeofthom.jpg",
@@ -177,7 +210,10 @@ const projectsData = [
     author: "1202 Magazine",
     category: "Music",
     camera: "35mm",
+<<<<<<< Updated upstream
     filmStock: "Fujifilm 400",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/010-35mm FujiFilm 400- Rome Streetz for 1202 Magazine/Rome Streetz Select.jpg",
     images: [
       "/update-photos/010-35mm FujiFilm 400- Rome Streetz for 1202 Magazine/Rome Streetz Select.jpg",
@@ -189,11 +225,18 @@ const projectsData = [
   {
     id: "011-35mm-tri-x-400-wnyu-75th-anniversary-concert",
     index: "011",
+<<<<<<< Updated upstream
     title: "WNYU 75th Anniversary",
     author: "WNYU",
     category: "Music",
     camera: "35mm",
     filmStock: "Tri-X 400",
+=======
+    title: "WNYU 75th Anniversary Concert",
+    author: "WNYU",
+    category: "Music",
+    camera: "35mm",
+>>>>>>> Stashed changes
     img: "/update-photos/011- 35mm Tri-x 400WNYU 75th Anniversary Concert/Select WNYU.jpg",
     images: [
       "/update-photos/011- 35mm Tri-x 400WNYU 75th Anniversary Concert/Select WNYU.jpg",
@@ -216,7 +259,10 @@ const projectsData = [
     author: "1202 Magazine",
     category: "Music",
     camera: "35mm",
+<<<<<<< Updated upstream
     filmStock: "400 Fujifilm",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/012- 1202 MAGAZINE- AG CLUB - 35 MM 400 FUJIFILM/SELECT AG CLUB.jpg",
     images: [
       "/update-photos/012- 1202 MAGAZINE- AG CLUB - 35 MM 400 FUJIFILM/SELECT AG CLUB.jpg",
@@ -234,7 +280,10 @@ const projectsData = [
     author: "STATIC Magazine",
     category: "Music",
     camera: "Digital",
+<<<<<<< Updated upstream
     filmStock: "Digital",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/ARCHIVE - Digital - Lexa Gates for STATIC Magazine/SELECT LEXA.jpg",
     images: [
       "/update-photos/ARCHIVE - Digital - Lexa Gates for STATIC Magazine/SELECT LEXA.jpg",
@@ -248,10 +297,16 @@ const projectsData = [
     id: "archive-35mm-portra-160-camilla-carrasco",
     index: "ARCHIVE",
     title: "Camilla Carrasco",
+<<<<<<< Updated upstream
     author: "Untitled",
     category: "Photography",
     camera: "35mm",
     filmStock: "Portra 160",
+=======
+    author: "Giovanni Sotomayor",
+    category: "Photography",
+    camera: "35mm",
+>>>>>>> Stashed changes
     img: "/update-photos/ARCHIVE- 35 mm Portra 160 - Camilla Carrasco/SELECT CAM.jpg",
     images: [
       "/update-photos/ARCHIVE- 35 mm Portra 160 - Camilla Carrasco/SELECT CAM.jpg",
@@ -267,10 +322,16 @@ const projectsData = [
     id: "archive-35mm-fujifilm-400-wiseboy-jeremy",
     index: "ARCHIVE",
     title: "Wiseboy Jeremy",
+<<<<<<< Updated upstream
     author: "Untitled",
     category: "Music",
     camera: "35mm",
     filmStock: "Fujifilm 400",
+=======
+    author: "Giovanni Sotomayor",
+    category: "Music",
+    camera: "35mm",
+>>>>>>> Stashed changes
     img: "/update-photos/ARCHIVE- 35mm fujifilm 400- Wiseboy Jeremy/Select Jeremy.jpg",
     images: [
       "/update-photos/ARCHIVE- 35mm fujifilm 400- Wiseboy Jeremy/Select Jeremy.jpg",
@@ -292,7 +353,10 @@ const projectsData = [
     author: "STATIC Magazine",
     category: "Music",
     camera: "Digital",
+<<<<<<< Updated upstream
     filmStock: "Digital",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/ARCHIVE- Digital - Danny Brown for STATIC Magazine/SELECT BROWN.jpg",
     images: [
       "/update-photos/ARCHIVE- Digital - Danny Brown for STATIC Magazine/SELECT BROWN.jpg",
@@ -315,7 +379,10 @@ const projectsData = [
     author: "STATIC Magazine",
     category: "Music",
     camera: "Digital",
+<<<<<<< Updated upstream
     filmStock: "Digital",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/ARCHIVE- Digital - Flatbush Zombies for STATIC Magazine/SELECT FLATBUSH.jpg",
     images: [
       "/update-photos/ARCHIVE- Digital - Flatbush Zombies for STATIC Magazine/SELECT FLATBUSH.jpg",
@@ -333,7 +400,10 @@ const projectsData = [
     author: "STATIC Magazine",
     category: "Music",
     camera: "Digital",
+<<<<<<< Updated upstream
     filmStock: "Digital",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/ARCHIVE- Digital- JPEGMAFIA for STATIC MAGAZINE/SELECT Jpegmafia.jpg",
     images: [
       "/update-photos/ARCHIVE- Digital- JPEGMAFIA for STATIC MAGAZINE/SELECT Jpegmafia.jpg",
@@ -351,7 +421,10 @@ const projectsData = [
     author: "STATIC Magazine",
     category: "Editorial",
     camera: "Digital",
+<<<<<<< Updated upstream
     filmStock: "Digital",
+=======
+>>>>>>> Stashed changes
     img: "/update-photos/ARCHIVE- Digitial - Mike Jenkins for STATIC Magazine/Select.jpg",
     images: [
       "/update-photos/ARCHIVE- Digitial - Mike Jenkins for STATIC Magazine/Select.jpg",
