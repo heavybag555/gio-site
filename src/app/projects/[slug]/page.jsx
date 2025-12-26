@@ -20,10 +20,10 @@ const Details = ({ setDetailsVisible, project }) => {
       <div className="fixed bottom-[var(--footerReserve)] left-0 px-4 z-[100]">
         <ul>
           <li className="normal-txt">{project.index}</li>
-          <li className="normal-txt">{project.title}</li>
-          {project.author && <li className="normal-txt">{project.author}</li>}
-          <li className="normal-txt">{project.camera}</li>
-          <li className="normal-txt">{project.filmStock}</li>
+          <li className="normal-txt font-medium">{project.title}</li>
+          {project.author && <li className="normal-txt font-medium">{project.author}</li>}
+          <li className="normal-txt font-medium">{project.camera}</li>
+          <li className="normal-txt font-medium">{project.filmStock}</li>
         </ul>
       </div>
       <div
@@ -103,10 +103,6 @@ const ProjectsDetail = () => {
     }
   };
 
-  useEffect(() => {
-    handleMouseEnter("playVideo");
-    return () => handleMouseLeave();
-  }, []);
 
   if (!project) {
     return <div>Nothing to show at the moment.</div>;
@@ -127,12 +123,12 @@ const ProjectsDetail = () => {
                 <a className="relative normal-txt max-lg:hidden">{videoTime}</a>
               )}
               <a className="normal-txt hidden max-lg:block">{project.index}</a>
-              <a className="normal-txt hidden max-lg:block">{project.title}</a>
+              <a className="normal-txt font-medium hidden max-lg:block">{project.title}</a>
             </div>
-            <a className="normal-txt max-lg:hidden">{project.title}</a>
-            <a className="normal-txt">{project.author}</a>
-            <a className="normal-txt max-lg:hidden">{project.category}</a>
-            <a className="normal-txt max-lg:hidden">{project.camera}</a>
+            <a className="normal-txt font-medium max-lg:hidden">{project.title}</a>
+            <a className="normal-txt font-medium">{project.author}</a>
+            <a className="normal-txt font-medium max-lg:hidden">{project.category}</a>
+            <a className="normal-txt font-medium max-lg:hidden">{project.camera}</a>
           </ul>
 
           <div className="fixed top-[var(--pageInsetTop)] right-0 px-4 flex justify-end cursor-default">
@@ -163,9 +159,7 @@ const ProjectsDetail = () => {
               ? "fixed top-0 flex justify-center items-center cursor-none"
               : "pt-[calc(var(--pageInsetTop)+24px)] pb-[var(--footerReserve)] overflow-y-auto min-h-screen flex flex-col items-center gap-4"
           }`}
-          onMouseEnter={() =>
-            handleMouseEnter(hasVideo ? "playVideo" : "default")
-          }
+          onMouseEnter={() => handleMouseEnter("default")}
           onMouseLeave={() => handleMouseLeave()}
         >
           {hasVideo ? (

@@ -86,22 +86,22 @@ const HeroProject = ({
             <a className="relative normal-txt group-hover:opacity-50 transition-all">
               {project.index}
             </a>
-            <a className="normal-txt group-hover:opacity-50 transition-all hidden max-lg:block">
+            <a className="normal-txt font-medium group-hover:opacity-50 transition-all hidden max-lg:block">
               {project.title}
             </a>
           </div>
 
-          <a className="normal-txt group-hover:opacity-50 transition-all max-lg:hidden">
+          <a className="normal-txt font-medium group-hover:opacity-50 transition-all max-lg:hidden">
             {project.title}
           </a>
 
-          <a className="normal-txt group-hover:opacity-50 transition-all">
+          <a className="normal-txt font-medium group-hover:opacity-50 transition-all">
             {project.author}
           </a>
-          <a className="normal-txt group-hover:opacity-50 transition-all max-lg:hidden">
+          <a className="normal-txt font-medium group-hover:opacity-50 transition-all max-lg:hidden">
             {project.category}
           </a>
-          <a className="normal-txt group-hover:opacity-50 transition-all max-lg:hidden">
+          <a className="normal-txt font-medium group-hover:opacity-50 transition-all max-lg:hidden">
             {project.camera}
           </a>
         </ul>

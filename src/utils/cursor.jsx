@@ -1,12 +1,11 @@
 "use client";
 import { motion, useMotionValue } from "framer-motion";
 import { useEffect } from "react";
-import { useCursorStore, usePlayingVideoStore } from "@/store/zustand";
+import { useCursorStore } from "@/store/zustand";
 import { useMedia } from "react-use";
 
 export const Cursor = () => {
   const { cursorVariant } = useCursorStore();
-  const { isPlaying } = usePlayingVideoStore();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const isTabletOrMobile = useMedia("(max-width: 992px)", false);
@@ -39,9 +38,6 @@ export const Cursor = () => {
           {cursorVariant === "default" && <div className="hidden" />}
           {cursorVariant === "projectHero" && (
             <div className="normal-txt">View</div>
-          )}
-          {cursorVariant === "playVideo" && (
-            <div className="normal-txt">{isPlaying ? "Pause" : "Play"}</div>
           )}
         </div>
       </motion.div>

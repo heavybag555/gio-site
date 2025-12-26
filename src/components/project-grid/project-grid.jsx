@@ -13,10 +13,10 @@ const ProjectGrid = ({ project, router, setHoveredImage }) => {
     >
       <ul className="flex flex-col items-start justify-start mix-blend-exclusion ">
         <li className="normal-txt">{project.index}</li>
-        <li className="normal-txt">{project.title}</li>
-        <li className="normal-txt">{project.author}</li>
-        <li className="normal-txt">{project.category}</li>
-        <li className="normal-txt">{project.camera}</li>
+        <li className="normal-txt font-medium">{project.title}</li>
+        <li className="normal-txt font-medium">{project.author}</li>
+        <li className="normal-txt font-medium">{project.category}</li>
+        <li className="normal-txt font-medium">{project.camera}</li>
       </ul>
     </motion.div>
   );
