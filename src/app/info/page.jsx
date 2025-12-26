@@ -32,14 +32,7 @@ const Info = () => {
         </ul>
       </section>
 
-<<<<<<< Updated upstream
       <section className="col-start-2 col-span-2 row-start-2 self-end max-lg:row-start-1 max-lg:col-start-1 max-lg:pt-3 max-lg:pb-2">
-=======
-      <section className="col-start-2 col-span-2 row-start-2 self-end max-lg:row-start-1 max-lg:col-start-1 max-lg:px-4 max-lg:py-3 max-lg:pr-16">
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         <div className="mb-4">
           <Image
             src="/gio-headshot.jpg"

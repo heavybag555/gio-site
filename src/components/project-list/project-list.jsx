@@ -17,8 +17,6 @@ const ProjectList = ({ project, router, setHoveredImage }) => {
           </a>
         </div>
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         <a className="normal-txt font-medium group-hover:opacity-50 transition-all">
           {project.title}
         </a>
@@ -29,30 +27,6 @@ const ProjectList = ({ project, router, setHoveredImage }) => {
           {project.category}
         </a>
         <a className="normal-txt font-medium group-hover:opacity-50 transition-all">
-=======
-        <a className="normal-txt group-hover:opacity-50 transition-all">
-          {project.title}
-        </a>
-        <a className="normal-txt group-hover:opacity-50 transition-all">
-          {project.author}
-        </a>
-        <a className="normal-txt group-hover:opacity-50 transition-all">
-          {project.category}
-        </a>
-        <a className="normal-txt group-hover:opacity-50 transition-all">
->>>>>>> Stashed changes
-=======
-        <a className="normal-txt group-hover:opacity-50 transition-all">
-          {project.title}
-        </a>
-        <a className="normal-txt group-hover:opacity-50 transition-all">
-          {project.author}
-        </a>
-        <a className="normal-txt group-hover:opacity-50 transition-all">
-          {project.category}
-        </a>
-        <a className="normal-txt group-hover:opacity-50 transition-all">
->>>>>>> Stashed changes
           {project.camera}
         </a>
       </ul>

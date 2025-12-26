@@ -15,7 +15,7 @@ const HeroProject = ({
   const router = useRouter();
   const { handleMouseEnter, handleMouseLeave, handleClick } = useCursorStore();
   const [onClicked, setOnClicked] = useState(false);
-  const isTablet = useMedia("(max-width: 992px)");
+  const isTablet = useMedia("(max-width: 992px)", false);
 
   // Default top-right action: navigate to /archive
   const handleTopRightClick = onTopRightClick || (() => router.push("/archive"));

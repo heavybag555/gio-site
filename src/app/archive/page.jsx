@@ -124,7 +124,7 @@ const Nav = ({
 
 const Archive = () => {
   const router = useRouter();
-  const isTablet = useMedia("(max-width: 992px)");
+  const isTablet = useMedia("(max-width: 992px)", false);
   const [activeFilter, setActiveFilter] = useState(null);
   const [layout, setLayout] = useState("grid");
   const [hoveredImage, setHoveredImage] = useState(null);
@@ -136,7 +136,13 @@ const Archive = () => {
     <>
       <ArchiveBackground hoveredImage={hoveredImage} />
       {!isTablet ? (
-        <main className={` ${layout === "grid" ? "px-4 pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]" : "px-4 pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]"}`}>
+        <main
+          className={` ${
+            layout === "grid"
+              ? "px-4 pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]"
+              : "px-4 pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]"
+          }`}
+        >
           <section
             className={`w-full ${
               layout === "grid"

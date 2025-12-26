@@ -11,7 +11,7 @@ const ProjectMobile = ({ project, index }) => {
   const { handleMouseEnter, handleMouseLeave, handleClick } = useCursorStore();
   const [hoverVideo, setHoverVideo] = useState(null);
   const [onClicked, setOnClicked] = useState(false);
-  const isTablet = useMedia("(max-width: 992px)");
+  const isTablet = useMedia("(max-width: 992px)", false);
 
   const calcTop = 16 + index * 16;
 
