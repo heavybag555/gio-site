@@ -5,7 +5,8 @@ import projectsData from "@/data/projectsData";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useCursorStore, usePlayingVideoStore } from "@/store/zustand";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import SmoothImage from "@/components/smooth-image/smooth-image";
 
 const formatTime = (seconds) => {
   const h = Math.floor(seconds / 3600);
@@ -14,10 +15,28 @@ const formatTime = (seconds) => {
   return [h, m, s].map((unit) => String(unit).padStart(2, "0")).join(":");
 };
 
+const AnimatedImage = ({ src, alt, priority, index }) => {
+  return (
+    <SmoothImage
+      src={src}
+      alt={alt}
+      priority={priority}
+      width={1200}
+      height={800}
+      inView
+      inViewMargin="200px 0px -100px 0px"
+      delay={index === 0 ? 0.05 : 0}
+      duration={0.95}
+      className="w-full max-w-[1200px]"
+      imgClassName="w-full h-auto object-contain"
+    />
+  );
+};
+
 const Details = ({ setDetailsVisible, project }) => {
   return (
     <>
-      <div className="fixed bottom-[var(--footerReserve)] left-0 px-4 z-[100]">
+      <div className="fixed bottom-[calc(var(--pageInsetBottom)+16.5px)] left-0 px-4 z-[100]">
         <ul>
           <li className="normal-txt">{project.index}</li>
           <li className="normal-txt font-medium">{project.title}</li>
@@ -153,7 +172,10 @@ const ProjectsDetail = () => {
           </div>
         )}
 
-        <section
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className={`w-full h-full ${
             hasVideo
               ? "fixed top-0 flex justify-center items-center cursor-none"
@@ -165,45 +187,41 @@ const ProjectsDetail = () => {
           onMouseLeave={() => handleMouseLeave()}
         >
           {hasVideo ? (
-            <video
+            <motion.video
+              initial={{ opacity: 0, scale: 1.02 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
               ref={videoRef}
               src={project.video}
               autoPlay
               loop
               muted={isMuted}
-              className="w-full h-auto"
+              className="w-full h-auto will-change-transform"
               onClick={togglePlayPause}
             />
           ) : (
             <div className="w-full flex flex-col items-center gap-10 px-4">
               {project.images && project.images.length > 0
                 ? project.images.map((imgSrc, idx) => (
-                    <div key={idx} className="relative w-full max-w-[1200px]">
-                      <Image
-                        src={imgSrc}
-                        alt={`${project.title} - ${idx + 1}`}
-                        width={1200}
-                        height={800}
-                        className="w-full h-auto object-contain"
-                        priority={idx === 0}
-                      />
-                    </div>
+                    <AnimatedImage
+                      key={idx}
+                      src={imgSrc}
+                      alt={`${project.title} - ${idx + 1}`}
+                      priority={idx === 0}
+                      index={idx}
+                    />
                   ))
                 : project.img && (
-                    <div className="relative w-full max-w-[1200px]">
-                      <Image
-                        src={project.img}
-                        alt={project.title}
-                        width={1200}
-                        height={800}
-                        className="w-full h-auto object-contain"
-                        priority
-                      />
-                    </div>
+                    <AnimatedImage
+                      src={project.img}
+                      alt={project.title}
+                      priority
+                      index={0}
+                    />
                   )}
             </div>
           )}
-        </section>
+        </motion.section>
 
         <footer
           className="fixed bottom-[var(--pageInsetBottom)] right-0 w-full px-4 mix-blend-exclusion z-50"
@@ -212,8 +230,8 @@ const ProjectsDetail = () => {
           <ul className="relative flex justify-between">
             <div className="flex items-center max-lg:gap-4">
               <button
-                className="normal-txt hover:text-gray-400 transition-colors"
-                onClick={() => setDetailsVisible(true)}
+                className={`normal-txt hover:text-gray-400 transition-colors ${detailsVisible ? '!text-gray-400' : ''}`}
+                onClick={() => setDetailsVisible(!detailsVisible)}
               >
                 Details
               </button>

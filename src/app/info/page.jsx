@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+import SmoothImage from "@/components/smooth-image/smooth-image";
 
 const Info = () => {
   const router = useRouter();
@@ -34,13 +34,16 @@ const Info = () => {
 
       <section className="col-start-2 col-span-2 row-start-2 self-end max-lg:row-start-1 max-lg:col-start-1 max-lg:pt-3 max-lg:pb-2">
         <div className="mb-4">
-          <Image
+          <SmoothImage
             src="/gio-headshot.jpg"
             alt="Giovanni Sotomayor"
             width={400}
             height={500}
-            className="w-1/2 h-auto"
             priority
+            inView={false}
+            duration={0.8}
+            className="w-1/2"
+            imgClassName="w-full h-auto"
           />
         </div>
         <p className="normal-txt cursor-pointer select-none">

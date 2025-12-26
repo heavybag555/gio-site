@@ -1,9 +1,9 @@
 import { useCursorStore } from "@/store/zustand";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useMedia } from "react-use";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import SmoothImage from "@/components/smooth-image/smooth-image";
 
 const ProjectMobile = ({ project, index }) => {
   const imageRef = useRef(null);
@@ -15,32 +15,13 @@ const ProjectMobile = ({ project, index }) => {
 
   const calcTop = 16 + index * 16;
 
-  const zoomAnimation = {
-    initial: { scale: 1 },
-    animate: {
-      scale: 2,
-      transition: {
-        duration: 0.25,
-        ease: [0.33, 1, 0.68, 1],
-      },
-    },
-  };
-
-  const opacityAnimation = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 0.3,
-        ease: [0.33, 1, 0.68, 1],
-      },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 0.3,
-        ease: [0.33, 1, 0.68, 1],
-      },
+  // Subtle click feedback (no zoom): a gentle soften/fade while routing.
+  const clickFeedback = {
+    initial: { opacity: 1, filter: "blur(0px)" },
+    clicked: {
+      opacity: 0.78,
+      filter: "blur(4px)",
+      transition: { duration: 0.18, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
@@ -55,7 +36,7 @@ const ProjectMobile = ({ project, index }) => {
     setTimeout(() => {
       router.push("/projects/" + project.id);
       setOnClicked(false);
-    }, 500);
+    }, 120);
 
     handleClick();
   };
@@ -63,7 +44,7 @@ const ProjectMobile = ({ project, index }) => {
   return (
     <>
       <header
-        className="sticky w-full px-5 mix-blend-exclusion"
+        className="sticky w-full px-5 mix-blend-exclusion relative z-30"
         style={{ top: calcTop }}
         onMouseEnter={() => setHoverVideo(true)}
         onMouseLeave={() => setHoverVideo(false)}
@@ -98,13 +79,13 @@ const ProjectMobile = ({ project, index }) => {
         </div>
       </header>
 
-      <section className="w-full h-fit px-4 py-4 mb-35 flex items-center justify-center ">
+      <section className="w-full h-fit px-4 py-4 mb-35 flex items-center justify-center relative z-0">
         <motion.figure
           ref={imageRef}
-          variants={zoomAnimation}
+          variants={clickFeedback}
           initial="initial"
-          animate={onClicked && "animate"}
-          className="size-full "
+          animate={onClicked ? "clicked" : "initial"}
+          className="size-full relative z-0"
           onMouseEnter={
             !isTablet ? () => handleMouseEnter("projectHero") : undefined
           }
@@ -113,23 +94,17 @@ const ProjectMobile = ({ project, index }) => {
             clickedInProject();
           }}
         >
-          <Image
+          <SmoothImage
             src={project.img}
+            alt={project.title || ""}
             width={1200}
             height={1200}
-            alt=""
-            className="size-full object-cover"
+            inView={false}
+            duration={0.85}
+            className="size-full"
+            imgClassName="size-full object-cover"
           />
         </motion.figure>
-
-        <motion.div
-          className="absolute "
-          variants={opacityAnimation}
-          initial="initial"
-          animate={onClicked ? "animate" : "initial"}
-        >
-          <h2 className="normal-txt">LOADING</h2>
-        </motion.div>
       </section>
     </>
   );

@@ -1,8 +1,9 @@
 import { useCursorStore } from "@/store/zustand";
-import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useMedia } from "react-use";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useRouter } from "next/navigation";
+import SmoothImage from "@/components/smooth-image/smooth-image";
 
 const HeroProject = ({
   project,
@@ -11,11 +12,12 @@ const HeroProject = ({
   onTopRightClick,
   showTopRightOnFirstOnly = true,
 }) => {
-  const imageRef = useRef(null);
   const router = useRouter();
   const { handleMouseEnter, handleMouseLeave, handleClick } = useCursorStore();
-  const [onClicked, setOnClicked] = useState(false);
   const isTablet = useMedia("(max-width: 992px)", false);
+  const imageContainerRef = useRef(null);
+  // Keep this around to improve cursor behavior timing on long pages
+  useInView(imageContainerRef, { once: true, margin: "200px 0px -100px 0px" });
 
   // Default top-right action: navigate to /archive
   const handleTopRightClick = onTopRightClick || (() => router.push("/archive"));
@@ -27,55 +29,15 @@ const HeroProject = ({
   const customPadding = index === 0 ? "108px 1rem 250px 1rem" : "5px";
   const customMargin = index === 0 ? 0 : "250px";
 
-  const zoomAnimation = {
-    initial: { scale: 1 },
-    animate: {
-      scale: 2,
-      transition: {
-        duration: 0.25,
-        ease: [0.33, 1, 0.68, 1],
-      },
-    },
-  };
-
-  const opacityAnimation = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 0.3,
-        ease: [0.33, 1, 0.68, 1],
-      },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 0.3,
-        ease: [0.33, 1, 0.68, 1],
-      },
-    },
-  };
-
   const clickedInProject = () => {
-    setOnClicked(true);
-
-    imageRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-
-    setTimeout(() => {
-      router.push("/projects/" + project.id);
-      setOnClicked(false);
-    }, 500);
-
     handleClick();
+    router.push("/projects/" + project.id);
   };
 
   return (
     <>
       <header
-        className="sticky w-full px-4 mix-blend-exclusion"
+        className="sticky w-full px-4 mix-blend-exclusion relative z-30"
         style={{ top: calcTop }}
       >
         <ul
@@ -125,22 +87,16 @@ const HeroProject = ({
         )}
       </header>
 
-      <motion.section
-        className="h-fit px-4 flex items-center justify-center max-lg:!py-4 max-lg:!px-[5px] max-lg:!mb-35"
+      <section
+        className="h-fit px-4 flex items-center justify-center max-lg:!py-4 max-lg:!px-[5px] max-lg:!mb-35 relative z-0"
         style={{
           padding: `${customPadding}`,
           marginBottom: `${customMargin}`,
         }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <motion.figure
-          ref={imageRef}
-          variants={zoomAnimation}
-          initial="initial"
-          animate={onClicked && "animate"}
-          className="size-auto px-4  max-lg:px-3 cursor-none"
+        <figure
+          ref={imageContainerRef}
+          className="size-auto px-4 max-lg:px-3 cursor-none relative z-0"
           onMouseEnter={
             !isTablet ? () => handleMouseEnter("projectHero") : undefined
           }
@@ -149,22 +105,19 @@ const HeroProject = ({
             clickedInProject();
           }}
         >
-          <img
+          <SmoothImage
             src={project.img}
-            alt=""
-            className="w-[1200px] max-w-full h-auto"
+            alt={project.title || ""}
+            priority={index === 0}
+            width={1200}
+            height={800}
+            inView
+            inViewMargin="200px 0px -100px 0px"
+            className="w-[1200px] max-w-full"
+            imgClassName="w-full h-auto"
           />
-        </motion.figure>
-
-        <motion.div
-          className="absolute "
-          variants={opacityAnimation}
-          initial="initial"
-          animate={onClicked ? "animate" : "initial"}
-        >
-          <h2 className="normal-txt">Loading</h2>
-        </motion.div>
-      </motion.section>
+        </figure>
+      </section>
     </>
   );
 };
