@@ -146,7 +146,11 @@ const ProjectsDetail = () => {
 
         {hasVideo && (
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           <div className="fixed top-[calc(var(--pageInsetTop)+20px)] left-0 w-full h-[1px] bg-white-20 z-10">
+=======
+          <div className="fixed top-[35px] left-0 w-full h-[1px] bg-white-20 z-10">
+>>>>>>> Stashed changes
 =======
           <div className="fixed top-[35px] left-0 w-full h-[1px] bg-white-20 z-10">
 >>>>>>> Stashed changes
@@ -162,15 +166,21 @@ const ProjectsDetail = () => {
             hasVideo
               ? "fixed top-0 flex justify-center items-center cursor-none"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               : "pt-[calc(var(--pageInsetTop)+24px)] pb-[var(--footerReserve)] overflow-y-auto min-h-screen flex flex-col items-center gap-4"
           }`}
           onMouseEnter={() => handleMouseEnter("default")}
 =======
+=======
+>>>>>>> Stashed changes
               : "pt-[60px] pb-[60px] overflow-y-auto min-h-screen flex flex-col items-center gap-4"
           }`}
           onMouseEnter={() =>
             handleMouseEnter(hasVideo ? "playVideo" : "default")
           }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           onMouseLeave={() => handleMouseLeave()}
         >
