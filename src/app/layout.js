@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import Footer from "@/components/footer/footer";
 import { Cursor } from "@/utils/cursor";
 import { getHeroProjects } from "@/sanity/queries";
@@ -49,6 +50,7 @@ export default function RootLayout({ children }) {
         <Cursor />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
