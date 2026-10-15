@@ -1,13 +1,7 @@
 import "./globals.css";
 import Footer from "@/components/footer/footer";
-import SafariEdges from "@/components/safari-edges/safari-edges";
 import { Cursor } from "@/utils/cursor";
 import { getHeroProjects } from "@/sanity/queries";
-
-export const viewport = {
-  viewportFit: "cover",
-  themeColor: "#000",
-};
 
 export async function generateMetadata() {
   let ogImage = "/favicon.png";
@@ -52,7 +46,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <SafariEdges />
         <Cursor />
         {children}
         <Footer />

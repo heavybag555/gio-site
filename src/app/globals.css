@@ -5,11 +5,6 @@
   --pageInsetTop: calc(var(--pageInset) + env(safe-area-inset-top, 0px));
   --pageInsetBottom: calc(var(--pageInset) + env(safe-area-inset-bottom, 0px));
   --footerReserve: calc(var(--pageInsetBottom) + 20px); /* Reserve for content above footer */
-  /* 1rem matches px-4. Safe-area insets are 0 until viewport-fit=cover. */
-  --pageGutterLeft: calc(1rem + env(safe-area-inset-left, 0px));
-  --pageGutterRight: calc(1rem + env(safe-area-inset-right, 0px));
-  --edge-top-background: var(--color-black);
-  --edge-bottom-background: var(--color-black);
 }
 
 @theme {
@@ -31,17 +26,11 @@
   .normal-txt {
     @apply text-[11px] leading-[16.5px] tracking-wide text-white font-normal antialiased cursor-pointer select-none;
   }
-
-  .px-safe {
-    padding-left: var(--pageGutterLeft);
-    padding-right: var(--pageGutterRight);
-  }
 }
 
 html {
   height: 100%;
   scroll-snap-type: y mandatory;
-  background-color: var(--edge-top-background);
 }
 
 body {
@@ -56,7 +45,7 @@ body {
 
   width: 100%;
   font-family: "Helvetica Mono", Helvetica, ui-sans-serif, sans-serif;
-  background-color: var(--edge-bottom-background);
+  background-color: var(--color-black);
   color: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -105,39 +94,4 @@ body {
 ::view-transition-old(root) {
   z-index: 1;
   animation: none !important;
-}
-
-/* Fixed strips Safari samples behind the status bar and bottom toolbar.
-   Hosts stay out of flow; ::after is the painted edge. */
-.edge-top,
-.edge-bottom {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-  z-index: 20;
-}
-
-.edge-top::after,
-.edge-bottom::after {
-  content: "";
-  position: fixed;
-  left: 0;
-  right: 0;
-  width: 100%;
-  pointer-events: none;
-}
-
-.edge-top::after {
-  top: 0;
-  height: max(12px, env(safe-area-inset-top));
-  background: var(--edge-top-background);
-}
-
-.edge-bottom::after {
-  bottom: 0;
-  height: max(12px, env(safe-area-inset-bottom));
-  background: var(--edge-bottom-background);
 }

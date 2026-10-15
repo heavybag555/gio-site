@@ -34,7 +34,7 @@ const Footer = () => {
   return (
     <>
       {!isProjectPage && (
-        <nav className="fixed bottom-[var(--pageInsetBottom)] w-full px-safe mix-blend-exclusion z-50">
+        <nav className="fixed bottom-[var(--pageInsetBottom)] w-full px-4 mix-blend-exclusion z-50">
           <div className="grid grid-cols-5 max-lg:grid-cols-2 items-end">
             {/* Column 1: Name */}
             <a

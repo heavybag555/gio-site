@@ -125,7 +125,7 @@ const ProjectDetailClient = ({ project }) => {
     <>
       <div className="">
         <header
-          className="fixed top-[var(--pageInsetTop)] right-0 w-full px-safe mix-blend-exclusion z-10"
+          className="fixed top-[var(--pageInsetTop)] right-0 w-full px-4 mix-blend-exclusion z-10"
           onMouseEnter={() => handleMouseEnter("default")}
         >
           <ul className="relative grid grid-cols-5 max-lg:grid-cols-2 ">
@@ -142,7 +142,7 @@ const ProjectDetailClient = ({ project }) => {
             <a className="normal-txt font-medium max-lg:hidden">{project.camera}</a>
           </ul>
 
-          <div className="fixed top-[var(--pageInsetTop)] right-0 px-safe flex justify-end cursor-default">
+          <div className="fixed top-[var(--pageInsetTop)] right-0 px-4 flex justify-end cursor-default">
             <button
               className="normal-txt cursor-pointer select-none hover:text-gray-400 transition-colors"
               onClick={() => {
@@ -170,7 +170,7 @@ const ProjectDetailClient = ({ project }) => {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className={`w-full h-full ${
             hasVideo
-              ? "fixed top-0 flex justify-center items-center cursor-none pt-[env(safe-area-inset-top,0px)] pr-[env(safe-area-inset-right,0px)] pb-[env(safe-area-inset-bottom,0px)] pl-[env(safe-area-inset-left,0px)]"
+              ? "fixed top-0 flex justify-center items-center cursor-none"
               : "pt-[calc(var(--pageInsetTop)+24px)] pb-[var(--footerReserve)] overflow-y-auto min-h-screen flex flex-col items-center gap-4"
           }`}
           onMouseEnter={() =>
@@ -192,7 +192,7 @@ const ProjectDetailClient = ({ project }) => {
               onClick={togglePlayPause}
             />
           ) : (
-            <div className="w-full flex flex-col items-center gap-10 px-safe">
+            <div className="w-full flex flex-col items-center gap-10 px-4">
               {project.images && project.images.length > 0
                 ? project.images.map((imgSrc, idx) => (
                     <AnimatedImage
@@ -222,7 +222,7 @@ const ProjectDetailClient = ({ project }) => {
             {detailsVisible && <DetailsOverlay onClick={() => setDetailsVisible(false)} />}
 
             <footer
-              className="fixed bottom-[var(--pageInsetBottom)] left-0 right-0 w-full px-safe z-50"
+              className="fixed bottom-[var(--pageInsetBottom)] left-0 right-0 w-full px-4 z-50"
               onMouseEnter={() => handleMouseLeave()}
             >
               <div className="flex justify-between items-end">

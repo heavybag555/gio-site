@@ -27,16 +27,12 @@ const HeroProject = ({
     ? 'var(--pageInsetTop)' 
     : `calc(var(--pageInsetTop) + ${index * 16}px)`;
   
-  // Desktop padding/margin. Horizontal gutters include the safe area and
-  // stay 1rem / 5px when that inset is 0.
-  const customPadding =
-    index === 0
-      ? "108px var(--pageGutterRight) 250px var(--pageGutterLeft)"
-      : "5px calc(5px + env(safe-area-inset-right, 0px)) 5px calc(5px + env(safe-area-inset-left, 0px))";
+  // Desktop padding/margin (unchanged)
+  const customPadding = index === 0 ? "108px 1rem 250px 1rem" : "5px";
   const customMargin = index === 0 ? 0 : "250px";
-
+  
   // Tablet/mobile: consistent 16px horizontal padding, no cropping
-  const tabletPadding = "1rem var(--pageGutterRight) 1rem var(--pageGutterLeft)";
+  const tabletPadding = "1rem 1rem 1rem 1rem";
   const tabletMargin = "140px";
 
   const clickedInProject = () => {
@@ -47,7 +43,7 @@ const HeroProject = ({
   return (
     <>
       <header
-        className="sticky w-full px-safe mix-blend-exclusion relative z-30"
+        className="sticky w-full px-4 mix-blend-exclusion relative z-30"
         style={{ top: calcTop }}
       >
         <ul
@@ -81,7 +77,7 @@ const HeroProject = ({
         {showTopRightOnFirstOnly ? (
           index === 0 && (
             <a
-              className="absolute top-0 right-[var(--pageGutterRight)] normal-txt hover:text-gray-400 transition-colors"
+              className="absolute top-0 right-4 normal-txt hover:text-gray-400 transition-colors"
               onClick={handleTopRightClick}
             >
               {topRightLabel}
@@ -89,7 +85,7 @@ const HeroProject = ({
           )
         ) : (
           <a
-            className="absolute top-0 right-[var(--pageGutterRight)] normal-txt hover:text-gray-400 transition-colors"
+            className="absolute top-0 right-4 normal-txt hover:text-gray-400 transition-colors"
             onClick={handleTopRightClick}
           >
             {topRightLabel}

@@ -42,7 +42,7 @@ const Nav = ({
   return (
     <>
       {!isTablet ? (
-        <nav className="fixed top-[var(--pageInsetTop)] right-0 px-safe mix-blend-exclusion flex flex-col items-end">
+        <nav className="fixed top-[var(--pageInsetTop)] right-0 px-4 mix-blend-exclusion flex flex-col items-end">
           <button
             className="mb-4 normal-txt text-end hover:text-gray-400 transition-colors"
             onClick={() => {
@@ -92,7 +92,7 @@ const Nav = ({
           </ul>
         </nav>
       ) : (
-        <nav className="fixed top-1/2 -translate-y-1/2 right-0 px-safe mix-blend-exclusion">
+        <nav className="fixed top-1/2 -translate-y-1/2 right-0 px-4 mix-blend-exclusion">
           <ul>
             <li className="flex flex-col items-end">
               <button
@@ -146,8 +146,8 @@ const ArchiveClient = ({ projectsData }) => {
         <main
           className={` ${
             layout === "grid"
-              ? "px-safe pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]"
-              : "px-safe pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]"
+              ? "px-4 pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]"
+              : "px-4 pt-[var(--pageInsetTop)] pb-[var(--footerReserve)]"
           }`}
         >
           <section
