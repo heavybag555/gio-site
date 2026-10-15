@@ -11,7 +11,7 @@ const ArchiveBackground = ({ hoveredImage }) => {
         width: "100vw",
         height: "100vh",
         zIndex: -1,
-        backgroundColor: "#000",
+        backgroundColor: "var(--color-black)",
         pointerEvents: "none",
       }}
     >
