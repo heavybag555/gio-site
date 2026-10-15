@@ -6,9 +6,9 @@ import SmoothImage from "@/components/smooth-image/smooth-image";
 const Info = () => {
   const router = useRouter();
   return (
-    <main className="h-screen grid grid-cols-5 grid-rows-2 px-4 pt-[var(--pageInsetTop)] pb-[var(--footerReserve)] max-lg:h-fit max-lg:grid-cols-2 max-lg:grid-rows-1 max-lg:pt-[var(--pageInsetTop)] max-lg:pb-[var(--footerReserve)] mix-blend-exclusion">
+    <main className="h-screen grid grid-cols-5 grid-rows-2 px-safe pt-[var(--pageInsetTop)] pb-[var(--footerReserve)] max-lg:h-fit max-lg:grid-cols-2 max-lg:grid-rows-1 max-lg:pt-[var(--pageInsetTop)] max-lg:pb-[var(--footerReserve)] mix-blend-exclusion">
       <section className="col-start-5 col-span-1 max-lg:col-start-2">
-        <div className="fixed top-[var(--pageInsetTop)] right-0 px-4 flex justify-end">
+        <div className="fixed top-[var(--pageInsetTop)] right-0 px-safe flex justify-end">
           <button
             className="normal-txt cursor-pointer select-none hover:text-gray-400 transition-colors"
             onClick={() => {
