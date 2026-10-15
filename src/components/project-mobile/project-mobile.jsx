@@ -67,7 +67,7 @@ const ProjectMobile = ({ project, index }) => {
           </a>
         </ul>
 
-        <div className="fixed top-3 right-0 px-4 z-50">
+        <div className="fixed top-[var(--pageInsetTop)] right-0 px-safe z-50">
           <a
             className="normal-txt uppercase"
             onClick={() => {
@@ -79,7 +79,7 @@ const ProjectMobile = ({ project, index }) => {
         </div>
       </header>
 
-      <section className="w-full h-fit px-4 py-4 mb-35 flex items-center justify-center relative z-0">
+      <section className="w-full h-fit px-safe py-4 mb-35 flex items-center justify-center relative z-0">
         <motion.figure
           ref={imageRef}
           variants={clickFeedback}
